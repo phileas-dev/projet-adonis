@@ -11,11 +11,9 @@ export default function NotFound() {
         </div>
         <div className="pc-lead">
           <span>Not found.</span>
-          <em>That route hasn&apos;t been built yet.</em>
+          <em>This page or paste doesn&apos;t exist.</em>
         </div>
-        <p className="pc-para">
-          The page you tried to reach doesn&apos;t exist. Check the URL or head back home.
-        </p>
+        <p className="pc-para">Check the URL or head back home.</p>
       </article>
     </div>
   )

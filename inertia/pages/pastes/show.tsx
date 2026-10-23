@@ -16,7 +16,10 @@ export default function ShowPaste({ paste, canEdit }: { paste: PasteData; canEdi
                 <Link href={`/pastes/${paste.code}/edit`} className="btn btn--secondary">
                   Edit
                 </Link>
-                <Form action={{ url: `/pastes/${paste.code}`, method: 'delete' }}>
+                <Form
+                  action={{ url: `/pastes/${paste.code}`, method: 'delete' }}
+                  onBefore={() => window.confirm('Are you sure you want to delete this paste?')}
+                >
                   {({ processing }) => (
                     <button type="submit" className="btn btn--secondary" disabled={processing}>
                       {processing ? 'Deleting…' : 'Delete'}
