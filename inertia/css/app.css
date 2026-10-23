@@ -961,15 +961,26 @@ input {
 .paste-list__item + .paste-list__item {
   border-top: 1px solid var(--line);
 }
+.paste-list__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+}
 .paste-list__link {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 16px 22px;
+  padding: 16px 0;
   transition: background 0.15s;
 }
 .paste-list__link:hover {
-  background: var(--paper);
+  color: var(--muted);
+}
+.paste-copy {
+  flex-shrink: 0;
 }
 .paste-list__title {
   display: flex;
@@ -1017,10 +1028,17 @@ input {
   .paste-form__actions {
     flex-wrap: wrap;
   }
-  .paste-list__header,
-  .paste-list__link {
+  .paste-list__header {
     padding-right: 16px;
     padding-left: 16px;
+  }
+  .paste-list__row {
+    gap: 8px;
+    padding-right: 12px;
+    padding-left: 16px;
+  }
+  .paste-copy {
+    padding: 0 9px;
   }
   .paste-content {
     padding: 16px;

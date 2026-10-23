@@ -1,4 +1,5 @@
 import { Link } from '@adonisjs/inertia/react'
+import CopyPasteLink from '~/components/copy_paste_link'
 import Page from '~/components/page'
 import MarketingLayout from '~/layouts/marketing'
 import type { PasteData } from '~/types'
@@ -24,13 +25,16 @@ export default function Home({ pastes }: { pastes: PasteData[] }) {
             <ul className="paste-list__items">
               {pastes.map((paste) => (
                 <li key={paste.code} className="paste-list__item">
-                  <Link href={`/pastes/${paste.code}`} className="paste-list__link">
-                    <span className="paste-list__title">{paste.title || 'Untitled paste'}</span>
-                    <span className="paste-list__preview">{paste.content}</span>
-                    <span className="paste-list__meta mono">
-                      {paste.createdAt?.slice(0, 10) ?? ''} · {paste.code}
-                    </span>
-                  </Link>
+                  <div className="paste-list__row">
+                    <Link href={`/pastes/${paste.code}`} className="paste-list__link">
+                      <span className="paste-list__title">{paste.title || 'Untitled paste'}</span>
+                      <span className="paste-list__preview">{paste.content}</span>
+                      <span className="paste-list__meta mono">
+                        {paste.createdAt?.slice(0, 10) ?? ''} · {paste.code}
+                      </span>
+                    </Link>
+                    <CopyPasteLink code={paste.code} />
+                  </div>
                 </li>
               ))}
             </ul>

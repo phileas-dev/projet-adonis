@@ -1,4 +1,5 @@
 import { Form, Link } from '@adonisjs/inertia/react'
+import { copyPasteLink } from '~/components/copy_paste_link'
 import type { PasteData } from '~/types'
 
 export default function PasteForm({ paste }: { paste?: PasteData }) {
@@ -8,7 +9,17 @@ export default function PasteForm({ paste }: { paste?: PasteData }) {
   }
 
   return (
-    <Form action={action}>
+    <Form
+      action={action}
+      onSuccess={(page) => {
+        if (!paste) {
+          const code = page.url.match(/^\/pastes\/([A-Za-z0-9]{8})\/?$/)?.[1]
+          if (code) {
+            void copyPasteLink(code)
+          }
+        }
+      }}
+    >
       {({ errors, processing }) => (
         <div className="paste-form">
           <div className="field">
