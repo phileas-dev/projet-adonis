@@ -65,12 +65,3 @@ npm run build
   schema.
 - `app/validators/paste.ts` — VineJS validation rules.
 - `inertia/pages/` and `inertia/components/` — React interface and forms.
-
-## AI use
-
-Fill this in with your own experience before presenting:
-
-- **Tools used:** [list the AI tools you used]
-- **What helped:** [describe where AI saved time or helped you understand code]
-- **What was difficult:** [describe any inaccurate suggestions or debugging]
-- **What you checked or corrected:** [describe how you verified the result]
