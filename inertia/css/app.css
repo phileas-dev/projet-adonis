@@ -906,3 +906,123 @@ input {
     padding: 20px;
   }
 }
+
+/* ==========================================================================
+   Pastes
+   ========================================================================== */
+.paste-page {
+  width: 100%;
+}
+.paste-page .page {
+  padding-top: 100px;
+}
+.paste-page--home .page {
+  padding-top: 110px;
+}
+.paste-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.field__textarea {
+  min-height: 280px;
+  height: auto;
+  padding: 12px;
+  resize: vertical;
+  font-family: var(--mono);
+  line-height: 1.55;
+}
+.paste-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.paste-list {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+}
+.paste-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.paste-list__header h2 {
+  font-size: 15px;
+  font-weight: 560;
+}
+.paste-list__items {
+  list-style: none;
+}
+.paste-list__item + .paste-list__item {
+  border-top: 1px solid var(--line);
+}
+.paste-list__link {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px 22px;
+  transition: background 0.15s;
+}
+.paste-list__link:hover {
+  background: var(--paper);
+}
+.paste-list__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 550;
+}
+.paste-list__preview {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.paste-list__meta {
+  color: var(--subtle);
+  font-size: 11px;
+}
+.paste-list__empty {
+  padding: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.paste-content {
+  overflow-x: auto;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 720px) {
+  .paste-page--home .page {
+    padding-top: 96px;
+  }
+  .paste-form__actions {
+    flex-wrap: wrap;
+  }
+  .paste-list__header,
+  .paste-list__link {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .paste-content {
+    padding: 16px;
+  }
+}

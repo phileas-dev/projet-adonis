@@ -4,6 +4,14 @@ import { type JSONDataTypes } from '@adonisjs/core/types/transformers'
 
 export type InertiaProps<T extends JSONDataTypes = {}> = PropsWithChildren<Data.SharedProps & T>
 
+export type PasteData = {
+  code: string
+  title: string | null
+  content: string
+  isUnlisted: boolean
+  createdAt: string | null
+}
+
 /**
  * Bridge the shared props and flash data inferred from the Inertia
  * middleware into the Inertia client, so `usePage().props`, `usePage().flash`,
